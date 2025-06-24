@@ -2,37 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - Derani Jethani</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">Derani Jethani</div>
-      <nav id="nav-menu">
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">Derani Jethani</h1>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html" class="text-pink-600 font-bold">About</a>
         <a href="shop.html">Poshak</a>
         <a href="jewelry.html">Jewelry</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <button id="menu-toggle">☰</button>
     </div>
   </header>
 
-  <main class="page-content">
-    <h2>About Us</h2>
-    <p>
-      Welcome to <strong>Derani Jethani</strong>, founded by <strong>Kalpana Kunwar</strong>, Udaipur.
-      We specialize in premium Rajputi Poshak and Jewelry. Our brand combines royalty with elegance,
-      delivering all across India.
+  <section class="max-w-5xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-3xl font-bold text-pink-600 mb-6">Our Story</h2>
+    <p class="text-lg text-gray-700 mb-4">
+      <strong>Derani Jethani</strong> is a traditional Rajputi fashion boutique founded by <strong>Kalpana Kunwar</strong> in Udaipur. We specialize in Rajputi Poshaks and Jewelry for weddings, festivals, and royal celebrations.
     </p>
-  </main>
+    <p class="text-gray-600">With a legacy of trust and authentic craftsmanship, we bring elegance from the roots of Rajasthan to every doorstep across India.</p>
+  </section>
 
-  <footer>
-    <p>© 2025 Derani Jethani</p>
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600 mt-10">
+    <p>📍 Opp A2 Beautiparlor, Near Jain Mandir, Udaipur, Rajasthan 313001</p>
+    <p>📞 7357574424 / 9950516428 | 
+      <a href="https://www.instagram.com/derani_jetani_rajputi_poshak/" class="text-pink-600 hover:underline">Instagram</a>
+    </p>
+    <p class="mt-2">&copy; 2025 Derani Jethani</p>
   </footer>
 </body>
 </html>
