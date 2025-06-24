@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,56 +6,53 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
+  background: #fff;
   color: #222;
+  line-height: 1.6;
 }
-
-/* Loader */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
   width: 100%;
   height: 100%;
-  background: white url('../images/loader.gif') center center no-repeat;
-  z-index: 9999;
+  object-fit: cover;
 }
 
-/* Header */
+/* Container & Header */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 header {
   background-color: #fff0f5;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #b22222;
+  color: #c2185b;
 }
 nav {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 nav a {
   color: #222;
-  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 nav a:hover {
-  color: #b22222;
+  color: #c2185b;
 }
 #menu-toggle {
   display: none;
@@ -69,13 +66,13 @@ nav a:hover {
   background: url('../images/banner.jpg') no-repeat center center/cover;
   height: 80vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .hero-text {
-  background-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: center;
 }
 .hero-text h1 {
@@ -83,66 +80,73 @@ nav a:hover {
   color: #b22222;
 }
 .hero-text p {
-  margin: 0.5rem 0 1rem;
   font-size: 1.2rem;
+  margin: 0.5rem 0 1.2rem;
 }
 .btn {
-  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
   background-color: #b22222;
-  color: white;
-  text-decoration: none;
+  color: #fff;
   border-radius: 5px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #8b1a1a;
 }
 
-/* Cards */
+/* Featured Section */
 .featured {
   padding: 2rem 1rem;
   text-align: center;
-}
-.featured h2 {
-  margin-bottom: 1rem;
 }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  width: 90%;
-  margin: auto;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 .card {
-  background: #fdfdfd;
-  border: 1px solid #ddd;
+  background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.3s;
 }
 .card:hover {
   transform: scale(1.03);
 }
 .card img {
-  width: 100%;
   height: 300px;
-  object-fit: cover;
+}
+.card h3 {
+  padding: 0.5rem 0 0;
 }
 .card p {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   font-weight: bold;
+}
+
+/* Pages */
+.page-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 /* Footer */
 footer {
   background: #f8f8f8;
+  padding: 1rem;
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
-footer .social a {
-  text-decoration: none;
+footer a {
   color: #b22222;
-  font-weight: 500;
 }
 
-/* Mobile Nav */
+/* Responsive */
 @media (max-width: 768px) {
   nav {
     display: none;
@@ -163,8 +167,12 @@ footer .social a {
   }
   .hero {
     height: 60vh;
+    background-size: cover;
   }
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .card img {
+    height: 250px;
   }
 }
