@@ -1,30 +1,91 @@
-<section class="max-w-7xl mx-auto px-4 py-12">
-  <h2 class="text-3xl font-semibold text-center mb-10">Rajputi Poshaks</h2>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>देवरानी जेठानी | राजपूती पोशाक</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .brand-name {
+      font-family: 'Mukta', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF8E7] text-gray-800 font-sans">
 
-  <div id="poshak-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    <!-- Auto-generated cards will go here -->
-  </div>
-</section>
-
-<script>
-  // Just update this array when you add/remove images
-  const imageCount = 64; // ✅ Total number of images you’ve added
-  const gallery = document.getElementById("poshak-gallery");
-
-  for (let i = 3; i <= imageCount; i++) {
-    const imagePath = `assets/images/clothes/${i}.jpeg`;
-    gallery.innerHTML += `
-      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-        <img src="${imagePath}" alt="Poshak ${i}" class="w-full h-64 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-1">Poshak ${i}</h3>
-          <p class="text-sm text-gray-500 mb-2">Price on Request</p>
-          <a href="https://wa.me/917357574424?text=Hi, I want price for: Poshak ${i}" 
-             class="block bg-pink-600 text-white text-sm text-center py-2 rounded hover:bg-pink-700">
-            Ask on WhatsApp
-          </a>
-        </div>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="assets/images/logo.jpg" alt="Logo" class="w-10 h-10">
+        <h1 class="text-2xl text-[#800000] brand-name">देवरानी जेठानी</h1>
       </div>
-    `;
-  }
-</script>
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-3xl">&#9776;</button>
+      </div>
+      <nav id="menu" class="hidden md:flex space-x-6 font-medium text-sm">
+        <a href="index.html" class="text-[#800000]">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html" class="text-[#800000] font-bold">Poshak</a>
+        <a href="jewelry.html">Jewelry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden px-4 pb-4 md:hidden">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="shop.html" class="block py-2">Poshak</a>
+      <a href="jewelry.html" class="block py-2">Jewelry</a>
+      <a href="contact.html" class="block py-2">Contact</a>
+    </div>
+  </header>
+
+  <!-- POSHAK GALLERY -->
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold text-center mb-10 text-[#800000]">राजपूती पोशाक</h2>
+    <div id="poshak-gallery" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <!-- Auto-generated cards will go here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-700">
+    <p>📍 Opp A2 Beautiparlor, Near Jain Mandir, Udaipur, Rajasthan 313001</p>
+    <p>📞 7357574424 / 9950516428 | 
+      <a href="https://www.instagram.com/derani_jetani_rajputi_poshak/" class="text-[#800000] hover:underline" target="_blank">Instagram</a>
+    </p>
+    <p class="mt-2">&copy; 2025 देवरानी जेठानी. Made with ❤️ in Rajasthan.</p>
+  </footer>
+
+  <!-- JS to generate cards -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    const imageCount = 64; // Update this as you add images
+    const gallery = document.getElementById("poshak-gallery");
+
+    for (let i = 3; i <= imageCount; i++) {
+      const imagePath = `assets/images/clothes/${i}.jpeg`;
+      gallery.innerHTML += `
+        <div class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden transition-all">
+          <div class="h-[300px] w-full overflow-hidden">
+            <img src="${imagePath}" alt="Poshak ${i}" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-semibold mb-1 text-center">Poshak ${i}</h3>
+            <p class="text-sm text-gray-500 mb-3 text-center">Price on Request</p>
+            <a href="https://wa.me/917357574424?text=Hi, I want price for: Poshak ${i}" 
+               class="block w-full text-center bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition">
+              Ask on WhatsApp
+            </a>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
